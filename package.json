@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gyeltshen-sherubtse/bookstore.git"
+    "url": "git+https://github.com/yoedzer/onlinebookstore.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gyeltshen-sherubtse/bookstore/issues"
+    "url": "https://github.com/yoedzer/onlinebookstore.git"
   },
-  "homepage": "https://github.com/gyeltshen-sherubtse/bookstore#readme",
+  "homepage": "https://github.com/yoedzer/onlinebookstore.git#readme",
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "dotenv": "^16.4.7",
