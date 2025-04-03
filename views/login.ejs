@@ -9,53 +9,22 @@
 </head>
 <body>
 
+
     <%- include('partials/header') %>
+
 
     <main class="login-container">
         <h2>Login to Your Account</h2>
-        <form id="login-form" class="login-form">
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <input type="password" id="password" name="password" placeholder="Password" required>
+        <form action="/auth/login" method="POST" class="login-form">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
-        <p id="error-message" style="color: red;"></p>
     </main>
+
 
     <%- include('partials/footer') %>
 
-    <script>
-        document.getElementById('login-form').addEventListener('submit', async function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('error-message');
-
-            try {
-                const response = await fetch('/auth/login', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password })
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    // Store user data in localStorage or sessionStorage
-                    localStorage.setItem('user', JSON.stringify(data.user));
-
-                    // Redirect to the home page or dashboard
-                    window.location.href = '/home';
-                } else {
-                    // Show error message
-                    errorMessage.textContent = data.error || 'Login failed. Please try again.';
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                errorMessage.textContent = 'An unexpected error occurred.';
-            }
-        });
-    </script>
 
 </body>
 </html>
